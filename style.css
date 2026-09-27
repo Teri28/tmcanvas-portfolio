@@ -988,4 +988,50 @@ textarea {
   .section {
     padding: var(--space-7) 0;
   }
+  
+}
+/* Align wrapped bullet text in the skills cards */
+.service-card li {
+  position: relative;
+  padding-left: 14px;
+}
+
+.service-card li::before {
+  position: absolute;
+  left: 0;
+  top: 0.65em;
+  margin-right: 0;
+}
+
+/* Align wrapped text in the portfolio preview */
+.hero-list li {
+  position: relative;
+  padding-left: 14px;
+}
+
+.hero-list li::before {
+  position: absolute;
+  left: 0;
+  top: 0.65em;
+  margin-right: 0;
+}
+.personal-layout {
+  display: grid;
+  gap: 32px;
+  align-items: start;
+}
+
+.personal-photo {
+  display: block;
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  border-radius: 20px;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+}
+
+@media (min-width: 900px) {
+  .personal-layout {
+    grid-template-columns: 280px minmax(0, 1fr);
+  }
 }
