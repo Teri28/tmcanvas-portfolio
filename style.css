@@ -1035,3 +1035,7 @@ textarea {
     grid-template-columns: 280px minmax(0, 1fr);
   }
 }
+/* Space between paragraphs in the personal section */
+#about p + p {
+  margin-top: 1.25em;
+}
