@@ -497,10 +497,16 @@ My work brings together HTML, CSS, JavaScript, Canva, Photoshop, Adobe Creative 
             </ul>
           </div>
 
-          <form class="card contact-form shadow-soft" onsubmit="handleFormSubmit(event); return false;">
+          <form class="card contact-form shadow-soft"
+            action="https://formsubmit.co/terim3124@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="Portfolio Inquiry" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_next" value="https://teri28.github.io/tmcanvas-portfolio/thanks.html" />
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
+            <p class="form-footnote">All fields are required. Messages are processed by FormSubmit and emailed to me. You may be asked to complete a spam check.</p>
             <div class="form-row">
               <label for="name">Name</label>
-              <input id="name" name="name" type="text" autocomplete="name" />
+              <input id="name" name="name" type="text" autocomplete="name" required maxlength="150" />
             </div>
             <div class="form-row">
               <label for="email">Email</label>
@@ -508,33 +514,33 @@ My work brings together HTML, CSS, JavaScript, Canva, Photoshop, Adobe Creative 
                 id="email"
                 name="email"
                 type="email"
-                autocomplete="email"
+                autocomplete="email" required maxlength="254"
               />
             </div>
             <div class="form-row">
               <label for="company">Project or collaboration idea</label>
-              <input id="company" name="company" type="text" />
+              <input id="company" name="Project or collaboration idea" type="text" required maxlength="300" />
             </div>
             <div class="form-row">
               <label for="budget">Project type</label>
-              <select id="budget" name="budget">
+              <select id="budget" name="Project type" required>
                 <option value="" disabled selected>
                   Select a project type
                 </option>
-                <option value="web-design">Web Design</option>
-                <option value="graphic-design">Graphic Design</option>
-                <option value="ai-workflow">AI Workflow Project</option>
-                <option value="portfolio-collab">
+                <option value="Web Design">Web Design</option>
+                <option value="Graphic Design">Graphic Design</option>
+                <option value="AI Workflow Project">AI Workflow Project</option>
+                <option value="Portfolio Collaboration">
                   Portfolio Collaboration
                 </option>
-                <option value="general-inquiry">General Inquiry</option>
+                <option value="General Inquiry">General Inquiry</option>
               </select>
             </div>
             <div class="form-row">
               <label for="goals"
                 >What are you hoping to launch or improve?</label
               >
-              <textarea id="goals" name="goals" rows="4"></textarea>
+              <textarea id="goals" name="message" rows="4" required maxlength="5000"></textarea>
             </div>
             <button type="submit" class="btn btn-primary btn-full">
               Send Message
@@ -556,29 +562,5 @@ My work brings together HTML, CSS, JavaScript, Canva, Photoshop, Adobe Creative 
       </div>
     </footer>
 
-    <script>
-      function handleFormSubmit(event) {
-        event.preventDefault();
-        
-        const name = document.getElementById('name').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const company = document.getElementById('company').value.trim();
-        const budget = document.getElementById('budget').value.trim();
-        const goals = document.getElementById('goals').value.trim();
-        
-        // Validate required fields
-        if (!name || !email || !company || !budget || !goals) {
-          alert('Please complete all fields before sending.');
-          return;
-        }
-        
-        const subject = 'Portfolio Inquiry';
-        const bodyText = `Name: ${name}\nEmail: ${email}\nProject or collaboration idea: ${company}\nProject type: ${budget}\nWhat are you hoping to launch or improve?: ${goals}`;
-        const body = encodeURIComponent(bodyText);
-        const mailtoLink = `mailto:terim3124@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
-        
-        window.location.href = mailtoLink;
-      }
-    </script>
   </body>
 </html>
